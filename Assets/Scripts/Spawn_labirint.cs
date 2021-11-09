@@ -17,8 +17,6 @@ public class Spawn_labirint : MonoBehaviour
 
     private int _many, _count, _item_in__many;
     private int _item_in__many_Y;
-    //private float _width, _size;
-    //private Material _cube_material;
 
     private enum cubeOrient {Top, Right, Back};
     private enum typeWall {Glass, Grass, Metal, Portal, Default, Border};
@@ -26,28 +24,9 @@ public class Spawn_labirint : MonoBehaviour
     
     void Start()
     {
-        //_width = GetComponent<Renderer>().bounds.size.y;//ширина стен
-        //_size = GetComponent<Renderer>().bounds.size.x;//размер куба, берется из обьекта на который повешан скрипт
-        //_cube_material = GetComponent<MeshRenderer>().material;//митериал этого обьекта
-
-        spawn_Target();//создание цели
+        spawn_Target();
 
         createColumns();
-
-        //drawWall(1, 2, 3, cubeOrient.Right);
-
-        //GameObject LeftSide = GameObject.CreatePrimitive(PrimitiveType.Cube);
-        //LeftSide.transform.position = new Vector3(-_size / 2, _size / 2, 0);
-        //LeftSide.transform.localScale = new Vector3(_width, _size + _width, _size + _width);
-        //LeftSide.GetComponent<MeshRenderer>().material = _cube_material;
-        //LeftSide.layer = LayerMask.NameToLayer("Cube");
-
-        //GameObject FrontSide = GameObject.CreatePrimitive(PrimitiveType.Cube);
-        //FrontSide.transform.position = new Vector3(0, _size / 2, -_size / 2);
-        //FrontSide.transform.localScale = new Vector3(_size + _width, _size + _width, _width);
-        //FrontSide.GetComponent<MeshRenderer>().material = _cube_material;
-        //FrontSide.layer = LayerMask.NameToLayer("Cube");
-
         createWalls();
         
     }
@@ -175,45 +154,6 @@ public class Spawn_labirint : MonoBehaviour
 
         }
     }
-
-    //private void drawRight(int i, int j, int k)
-    //{
-    //    float _size_X = -_size / 2 + _size / countRoom + i * _size / countRoom;
-    //    float _size_Y = _size - _size / (countRoom * 2) - j * _size / countRoom;
-    //    float _size_Z = _size / 2 - _size / (countRoom * 2) - k * _size / countRoom;
-
-    //    right[j, k, i] = GameObject.CreatePrimitive(PrimitiveType.Cube);
-    //    right[j, k, i].transform.position = new Vector3(_size_X, _size_Y, _size_Z);
-    //    right[j, k, i].transform.localScale = new Vector3(_width, _size / countRoom + _width,  _size / countRoom + _width);
-    //    right[j, k, i].GetComponent<MeshRenderer>().material = _cube_material;
-    //    right[j, k, i].layer = LayerMask.NameToLayer("Cube");
-    //}
-
-    //private void drawTop(int i, int j, int k)
-    //{
-    //    float _size_X = -_size / 2 + _size / (countRoom * 2) + i * _size / countRoom; 
-    //    float _size_Y = _size - j * _size / countRoom;
-    //    float _size_Z = _size / 2 - _size / (countRoom * 2) - k * _size / countRoom;
-
-    //    top[j, k, i] = GameObject.CreatePrimitive(PrimitiveType.Cube);
-    //    top[j, k, i].transform.position = new Vector3(_size_X, _size_Y, _size_Z);
-    //    top[j, k, i].transform.localScale = new Vector3(_size / countRoom + _width, _width, _size / countRoom + _width);
-    //    top[j, k, i].GetComponent<MeshRenderer>().material = _cube_material;
-    //    top[j, k, i].layer = LayerMask.NameToLayer("Cube"); ;
-    //}
-
-    //private void drawBack(int i, int j, int k)
-    //{
-    //    float _size_X = -_size / 2 + _size / (countRoom * 2) + i * _size / countRoom;
-    //    float _size_Y = _size - _size / (countRoom * 2) - j * _size / countRoom;
-    //    float _size_Z = _size / 2 - k * _size / countRoom;
-
-    //    back[j, k, i] = GameObject.CreatePrimitive(PrimitiveType.Cube);
-    //    back[j, k, i].transform.position = new Vector3(_size_X, _size_Y, _size_Z);
-    //    back[j, k, i].transform.localScale = new Vector3(_size / countRoom + _width, _size / countRoom + _width, _width);
-    //    back[j, k, i].GetComponent<MeshRenderer>().material = _cube_material;
-    //    back[j, k, i].layer = LayerMask.NameToLayer("Cube"); ;
-    //}
 
     private void drawWall(int i, int j, int k, cubeOrient cO)
     {
